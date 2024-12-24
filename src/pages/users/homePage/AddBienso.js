@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from "react";
 import axios from "axios";
 import "./AddBienso.scss";
 
-const API_URL = "http://localhost:3000/api/bien-so";
+const API_URL = "https://check-bien-so-tai-nan-sever.onrender.com/api/bien-so";
 
 const AddBienso = () => {
   const [bienSo, setBienSo] = useState("");

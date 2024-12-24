@@ -14,7 +14,9 @@ const AccidentCarList = ({ reload }) => {
   useEffect(() => {
     const fetchAccidentCars = async () => {
       try {
-        const response = await fetch("http://localhost:3000/api/bien-so");
+        const response = await fetch(
+          "https://check-bien-so-tai-nan-sever.onrender.com/api/bien-so"
+        );
         if (!response.ok) {
           throw new Error("Không thể tải danh sách xe tai nạn!");
         }
@@ -106,7 +108,7 @@ const AccidentCarList = ({ reload }) => {
               onClick={() => handleSelectCar(car)}
             >
               <img
-                src={`http://localhost:3000/uploads/${car.hinh_anh}`}
+                src={`https://check-bien-so-tai-nan-sever.onrender.com/uploads/${car.hinh_anh}`}
                 alt={`Biển số ${car.bien_so}`}
                 className="car-image"
               />
@@ -150,7 +152,7 @@ const AccidentCarList = ({ reload }) => {
             </button>
             <h2>Chi tiết xe</h2>
             <img
-              src={`http://localhost:3000/uploads/${selectedCar.hinh_anh}`}
+              src={`https://check-bien-so-tai-nan-sever.onrender.com/uploads/${selectedCar.hinh_anh}`}
               alt={`Biển số ${selectedCar.bien_so}`}
               className="car-image"
             />

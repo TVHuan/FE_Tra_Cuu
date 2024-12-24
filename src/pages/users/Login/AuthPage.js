@@ -11,10 +11,13 @@ const AuthPage = () => {
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post("http://localhost:5000/api/login", {
-        ten_dang_nhap: tenDangNhap,
-        mat_khau: matKhau,
-      });
+      const response = await axios.post(
+        "https://check-bien-so-tai-nan-sever.onrender.com/api/login",
+        {
+          ten_dang_nhap: tenDangNhap,
+          mat_khau: matKhau,
+        }
+      );
       setMessage(response.data.message);
       localStorage.setItem("token", response.data.token);
     } catch (error) {
@@ -25,11 +28,14 @@ const AuthPage = () => {
   const handleRegister = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post("http://localhost:5000/api/register", {
-        ten_dang_nhap: tenDangNhap,
-        mat_khau: matKhau,
-        vai_tro: "user", // Vai trò mặc định là "user"
-      });
+      const response = await axios.post(
+        "https://check-bien-so-tai-nan-sever.onrender.com/api/register",
+        {
+          ten_dang_nhap: tenDangNhap,
+          mat_khau: matKhau,
+          vai_tro: "user", // Vai trò mặc định là "user"
+        }
+      );
       setMessage(response.data.message);
     } catch (error) {
       setMessage(error.response?.data?.error || "Lỗi không xác định");

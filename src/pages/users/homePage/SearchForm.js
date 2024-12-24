@@ -20,7 +20,7 @@ const SearchForm = () => {
 
     try {
       const response = await fetch(
-        `http://localhost:3000/api/bien-so/${bienSo}`
+        `https://check-bien-so-tai-nan-sever.onrender.com/api/bien-so/${bienSo}`
       );
       if (!response.ok) {
         throw new Error("Không tìm thấy biển số!");
@@ -68,7 +68,7 @@ const SearchForm = () => {
           </p>
           {result.hinh_anh && (
             <img
-              src={`http://localhost:3000/uploads/${result.hinh_anh}`}
+              src={`https://check-bien-so-tai-nan-sever.onrender.com/uploads/${result.hinh_anh}`}
               alt={`Biển số ${result.bien_so}`}
               className="car-image"
             />
